@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Pick an Option!</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            background-color: #f0f2f5;
+            margin: 0;
+        }
+        .container {
+            display: flex;
+            gap: 20px;
+        }
+        .box {
+            width: 150px;
+            height: 150px;
+            background-color: #075e54;
+            color: white;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            font-size: 1.2rem;
+            font-weight: bold;
+            border-radius: 10px;
+            cursor: pointer;
+            box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+            transition: transform 0.2s;
+            text-align: center;
+            padding: 10px;
+            box-sizing: border-box;
+        }
+        .box:hover {
+            transform: scale(1.05);
+        }
+        .revealed {
+            background-color: #128c7e !important;
+            font-size: 1rem;
+        }
+    </style>
+</head>
+<body>
+
+    <div class="container">
+        <!-- Option 1 -->
+        <div class="box" onclick="reveal(this, '🎁 Free Pizza!')">Option 1</div>
+        <!-- Option 2 -->
+        <div class="box" onclick="reveal(this, '🏃 50 Pushups!')">Option 2</div>
+    </div>
+
+    <script>
+        function reveal(element, text) {
+            element.innerHTML = text;
+            element.classList.add('revealed');
+            // Optional: Disable clicking again
+            element.onclick = null; 
+        }
+    </script>
+
+</body>
+</html>
